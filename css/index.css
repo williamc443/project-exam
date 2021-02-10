@@ -1,0 +1,14 @@
+html,
+body {
+    /* background: url(../img/bkg4.jpg) fixed; */
+    background-color: rgb(19, 21, 29);
+}
+
+.next-launch {
+    margin: 125px 15% 0 15%;
+}
+
+.container {
+    height: 100%;
+}
+

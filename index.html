@@ -5,11 +5,38 @@
     <meta name="desription" content="Microsite for SpaceX by front-end developer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="spacex, exam, microsite">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css\styles.css">
     <link rel="stylesheet" href="css/index.css">
     <title>SpaceX</title>
 </head>
 <body>
-    
+    <div class="container">
+        <header class="header" id="top">
+            <div class="fixed-top-bar">
+                <div class="logo-container" id="logo-container"><a href="index.html"><img src="images/logo.png" alt="SpaceX logo"
+                            class="logo"></a>
+            </div>
+            </div>
+            <div class="nav-container">
+            <nav class="top-nav" id="top-nav">
+                <ul>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="rockets.html">Rockets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            </div>
+            <div class="header-content">
+                <div class="header-content-countdown">
+                    
+                    <p class="countdown"></p>
+                    <p class="small-text">Until next launch!</p>
+                    <!-- <a href="" class="arrow-link">See more details</a> -->
+                </div> 
+            </div>
+        </header>
+    </div>
+    <script src="js\index.js"></script>
+    <script src="js\countdown.js"></script>
 </body>
 </html>

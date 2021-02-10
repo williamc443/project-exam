@@ -1,11 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="desription" content="Microsite for SpaceX by front-end developer">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="spacex, exam, microsite">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/contact.css">
+        <title>Contact SpaceX</title>
+    </head>
 </head>
 <body>
+    <div class="container">
+        <header class="header" id="top">
+            <div class="top-bar">
+                <div class="logo-container" id="logo-container"><a href="index.html"><img src="images/logo.png" alt="SpaceX logo"
+                            class="logo"></a>
+                </div>
+            
+            <div class="nav-container">
+            <nav class="top-nav" id="top-nav">
+                <ul>
+                    <!-- <li id="toggle-menu"><i class="fas fa-bars"></i></li> -->
+                    <li><a href="launches.html">Launches</a></li>
+                    <li><a href="launch_pads.html">Launch pads</a></li>
+                    <li><a href="rockets.html">Rockets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            </div>
+            </div>
+        </header>
+        <main>
+            <h2>Do you have any questions?</h2>
+            <h3>Send a message</h3>
+            <form id="contactForm">
+                <div>
+                    <label for="name">First name:</label>
+                    <div class="error" id="nameError">Must have at least 2 characters</div>
+                    <input id="name" placeholder="Please enter your first name" />
+                </div>
+                <div>
+                    <label for="lastName">Last name: </label>
+                    <div class="error" id="lastNameError">Must have at least 2 characters</div>
+                    <input id="lastName" placeholder="Please enter your last name" />
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <div class="error" id="emailError">Please enter a valid email address</div>
+                    <input id="email" placeholder="Please enter your email address" />
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <div class="error" id="messageError">Please enter 10 characters or more</div>
+                    <textarea id="message"></textarea>
+                </div>
+                <button type="submit" class="button">Submit</button>
+                <p id="submitMessage"></p>
+            </form>
+        </div>
+        </main>
+            <div class="site-content">
+                <div class="countdown-content">
+                    <p class="countdown"></p>
+                    <p class="small-text">Until next launch!</p>
+                    <!-- <a href="" class="arrow-link">See more details</a> -->
+                </div> 
+            </div>
     
+    <script src="js\contact.js"></script>
+    <script src="js\index.js"></script>
+    <script src="js\countdown.js"></script>
 </body>
 </html>
