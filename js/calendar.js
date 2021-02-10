@@ -14,7 +14,9 @@ date.getMonth() + 1, 0).getDate();
 //+1 = last day of the current month
 //,1 = last day og the previous month
 
-console.log(lastDay);
+// console.log(lastDay);
+
+const firstDayIndex = date.getDay();
 
 const months = [
     "january",
@@ -36,6 +38,10 @@ document.querySelector('.date h1').innerHTML= months[date.getMonth()];
 document.querySelector('.date p').innerHTML= date.toDateString();
 
 let days = "";
+
+for(let x = firstDayIndex; x > 0; x--) {
+    days += `<div class="prev-date">${i}</div>`
+}
 
 for(let i = 1; i <= lastDay; i++) {
     days += `<div>${i}</div>`;
