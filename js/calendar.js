@@ -1,38 +1,42 @@
 const date = new Date();
 
-date.setDate(1);
+const calendar = document.querySelector(".calendar");
+const eventDate = {
+  name: "Happy Birthday",
+  year: 2021,
+  month: "February",
+  day: 22
+}
 
-console.log(date.getDay());
+const renderCalendar = () => {
+  date.setDate(1);
 
-//Set current month:
-// date.setMonth(6);
+  const monthDays = document.querySelector(".days");
 
-const monthDays = document.querySelector('.days')
+  const lastDay = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDate();
 
-const lastDay = new Date(date.getFullYear(),
-date.getMonth() + 1, 0).getDate();
-//+1 = last day of the current month
-//,1 = last day og the previous month
+  const prevLastDay = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    0
+  ).getDate();
 
-// console.log(lastDay);
+  const firstDayIndex = date.getDay();
 
-const prevLastDay = new Date(date.getFullYear(),
-date.getMonth(), 0).getDate();
+  const lastDayIndex = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDay();
 
-console.log(prevLastDay);
+  const nextDays = 7 - lastDayIndex - 1;
 
-const firstDayIndex = date.getDay();
-
-const lastDayIndex = new Date(date.getFullYear(),
-date.getMonth() + 1, 0).getDay();
-
-// Checking the last day of the month=
-// console.log(lastDayIndex);
-
-const nextDays = 7 - lastDayIndex - 1;
-
-const months = [
-    "january",
+  const months = [
+    "January",
     "February",
     "March",
     "April",
@@ -44,31 +48,51 @@ const months = [
     "October",
     "November",
     "December",
-]
+  ];
 
-document.querySelector('.date h1').innerHTML= months[date.getMonth()];
+  document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
-document.querySelector('.date p').innerHTML= date.toDateString();
+  document.querySelector(".date p").innerHTML = new Date().toDateString();
 
-let days = "";
+  let days = "";
 
-for(let x = firstDayIndex; x > 0; x--) {
+  for (let x = firstDayIndex; x > 0; x--) {
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
-}
+  }
 
-for(let i = 1; i <= lastDay; i++) {
-    days += `<div>${i}</div>`;
-}
-    // monthDays.innerHTML = days;
-    // x += 10  x = x + 10
+  for (let i = 1; i <= lastDay; i++) {
+    if (
+      i === new Date().getDate() &&
+      date.getMonth() === new Date().getMonth()
+    ) {
+      days += `<div class="today">${i}</div>`;
+    } else {
+      days += `<div>${i}</div>`;
+    }
+  }
 
-
-// const month = date.getMonth();
-
-// console.log(month);
-
-for(let j = 1; J <= nextDays; j++) {
+  for (let j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
     monthDays.innerHTML = days;
-}
+  }
 
+  for (let i = 0; i < days[i].length; i++) {
+    const days = document.querySelector(`.days`);
+
+    if(eventDate.year === 2021 && eventDate.month === days.month && eventDate.day === days[i].days); {
+      days.innerHTML += `<div class="days">${month.days}<span class="event">${eventDate.name}</span><div>`
+    }
+  }
+};
+
+document.querySelector(".prev").addEventListener("click", () => {
+  date.setMonth(date.getMonth() - 1);
+  renderCalendar();
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  date.setMonth(date.getMonth() + 1);
+  renderCalendar();
+});
+
+renderCalendar();
